@@ -14,8 +14,8 @@ code {
 
 .wrapper {
   padding-top: 5rem;
-margin: 0 auto;
-width: 600px;
+  margin: 0 auto;
+  width: 600px;
 }
 
 .rm {
@@ -25,6 +25,10 @@ width: 600px;
   border: none;
 }
 
-.clock {
-  padding: 0em;
+.done {
+  text-decoration: line-through;
 }
+
+/* .clock {
+  padding: 0em;
+} */

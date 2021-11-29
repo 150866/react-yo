@@ -14,13 +14,22 @@ const styles = {
     input: {
         marginRight: '1rem'
     }
-}
+} 
 
  function TodoItem({ todo, index, onChange }) {
+    const classes = []
+    if (todo.completed) {
+        classes.push('done')
+    }
     return (
     <li style={styles.li}>
-        <span>
-            <input type="checkbox" style={styles.input} onChange={() => onChange(todo.id)} />
+        <span className={classes.join(' ')}>
+            <input 
+              type='checkbox'
+              checked={todo.completed}
+              style={styles.input} 
+              onChange={() => onChange(todo.id)}
+            />
             <strong>{ index +1}</strong>
              &nbsp;
             {todo.title}
@@ -28,12 +37,11 @@ const styles = {
 
         <button className='rm'>&times;</button>
     </li>)
-}
 
 TodoItem.propTypes = {
     todo: PropTypes.object.isRequired,
     index: PropTypes.number,
     onChange: PropTypes.func.isRequired
 }
-
-export default TodoItem  
+ 
+export default TodoItem
